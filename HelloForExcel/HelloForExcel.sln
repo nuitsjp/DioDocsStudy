@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloForExcel", "HelloForExcel\HelloForExcel.csproj", "{83BF41FD-65EA-4839-94F5-A72F5ABF08BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DioDocsStudy.Excel", "..\DioDocsStudy\DioDocsStudy.Excel\DioDocsStudy.Excel.csproj", "{F7E7DCD6-490A-419E-9FAB-E15E26741E87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeInteropExcel", "OfficeInteropExcel\OfficeInteropExcel.csproj", "{0305235A-4413-4F95-8A7B-E1C9281A41FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloClosedXML", "HelloClosedXML\HelloClosedXML.csproj", "{42201F81-6ECA-4233-8007-E4766C8E06EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelloOpenXml", "HelloOpenXml\HelloOpenXml.csproj", "{1EBD1DCC-9252-4B15-80DA-A60E88E22D88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloNPOI", "HelloNPOI\HelloNPOI.csproj", "{A44C2335-224D-456C-9132-585300A1C331}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloEPPlus", "HelloEPPlus\HelloEPPlus.csproj", "{CF21CDBB-3EFC-4240-8B15-ECE56203C7F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83BF41FD-65EA-4839-94F5-A72F5ABF08BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83BF41FD-65EA-4839-94F5-A72F5ABF08BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83BF41FD-65EA-4839-94F5-A72F5ABF08BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83BF41FD-65EA-4839-94F5-A72F5ABF08BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7E7DCD6-490A-419E-9FAB-E15E26741E87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7E7DCD6-490A-419E-9FAB-E15E26741E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7E7DCD6-490A-419E-9FAB-E15E26741E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7E7DCD6-490A-419E-9FAB-E15E26741E87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0305235A-4413-4F95-8A7B-E1C9281A41FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0305235A-4413-4F95-8A7B-E1C9281A41FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0305235A-4413-4F95-8A7B-E1C9281A41FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0305235A-4413-4F95-8A7B-E1C9281A41FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42201F81-6ECA-4233-8007-E4766C8E06EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42201F81-6ECA-4233-8007-E4766C8E06EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42201F81-6ECA-4233-8007-E4766C8E06EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42201F81-6ECA-4233-8007-E4766C8E06EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EBD1DCC-9252-4B15-80DA-A60E88E22D88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EBD1DCC-9252-4B15-80DA-A60E88E22D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EBD1DCC-9252-4B15-80DA-A60E88E22D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EBD1DCC-9252-4B15-80DA-A60E88E22D88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A44C2335-224D-456C-9132-585300A1C331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A44C2335-224D-456C-9132-585300A1C331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A44C2335-224D-456C-9132-585300A1C331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A44C2335-224D-456C-9132-585300A1C331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF21CDBB-3EFC-4240-8B15-ECE56203C7F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF21CDBB-3EFC-4240-8B15-ECE56203C7F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF21CDBB-3EFC-4240-8B15-ECE56203C7F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF21CDBB-3EFC-4240-8B15-ECE56203C7F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B3C9533-0634-4FAA-ABA4-B0EE518302B5}
+	EndGlobalSection
+EndGlobal

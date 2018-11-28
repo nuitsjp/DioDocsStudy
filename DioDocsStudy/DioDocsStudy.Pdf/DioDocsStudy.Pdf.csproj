@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GrapeCity.DioDocs.Pdf.ja" Version="1.0.0.146" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="if not exist $(ProjectDir)\PdfActivator.cs copy $(ProjectDir)\..\PdfActivator.cs $(ProjectDir)\PdfActivator.cs" />
+  </Target>
+
+</Project>

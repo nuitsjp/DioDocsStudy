@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DioDocsStudy.Excel", "DioDocsStudy.Excel\DioDocsStudy.Excel.csproj", "{DB57897F-A16C-4789-94DC-F54B39EC4B1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DioDocsStudy.Pdf", "DioDocsStudy.Pdf\DioDocsStudy.Pdf.csproj", "{6ABE6E69-B796-4A59-A455-F60F84DC30A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB57897F-A16C-4789-94DC-F54B39EC4B1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB57897F-A16C-4789-94DC-F54B39EC4B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB57897F-A16C-4789-94DC-F54B39EC4B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB57897F-A16C-4789-94DC-F54B39EC4B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ABE6E69-B796-4A59-A455-F60F84DC30A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ABE6E69-B796-4A59-A455-F60F84DC30A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ABE6E69-B796-4A59-A455-F60F84DC30A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ABE6E69-B796-4A59-A455-F60F84DC30A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {236EB0A6-F7B1-4D4F-8EC6-5EB39C049235}
+	EndGlobalSection
+EndGlobal

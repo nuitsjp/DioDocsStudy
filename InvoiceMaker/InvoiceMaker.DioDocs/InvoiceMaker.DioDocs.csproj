@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>InvoiceMaker.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GrapeCity.DioDocs.Excel.ja" Version="1.5.0.5" />
+    <PackageReference Include="GrapeCity.DioDocs.Pdf.ja" Version="1.0.0.146" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DioDocsStudy\DioDocsStudy.Excel\DioDocsStudy.Excel.csproj" />
+    <ProjectReference Include="..\..\DioDocsStudy\DioDocsStudy.Pdf\DioDocsStudy.Pdf.csproj" />
+    <ProjectReference Include="..\InvoiceMaker\InvoiceMaker.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="diodocs.cer">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="diodocs.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="InvoiceMaker.snk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

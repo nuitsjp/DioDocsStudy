@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DioDocsStudy.Excel", "..\DioDocsStudy\DioDocsStudy.Excel\DioDocsStudy.Excel.csproj", "{6756EF78-4049-4C99-A1C0-D20155A1E411}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceMaker.ClosedXml", "InvoiceMaker.ClosedXml\InvoiceMaker.ClosedXml.csproj", "{797C0403-6DEF-4F78-A975-458FBB3A7EB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceMaker.DioDocs", "InvoiceMaker.DioDocs\InvoiceMaker.DioDocs.csproj", "{C2BE95D3-9C9D-4542-8C8A-9F41A36724A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceMaker", "InvoiceMaker\InvoiceMaker.csproj", "{5A8B9B6B-CFC7-41A8-AB67-A45A00A6A59E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceMaker.Npoi", "InvoiceMaker.Npoi\InvoiceMaker.Npoi.csproj", "{8EB5741E-73E0-4490-AC8B-98DAE17F3162}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DioDocsStudy.Pdf", "..\DioDocsStudy\DioDocsStudy.Pdf\DioDocsStudy.Pdf.csproj", "{2F69BD39-80D0-4D0F-8F5D-20DA05727912}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6756EF78-4049-4C99-A1C0-D20155A1E411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6756EF78-4049-4C99-A1C0-D20155A1E411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6756EF78-4049-4C99-A1C0-D20155A1E411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6756EF78-4049-4C99-A1C0-D20155A1E411}.Release|Any CPU.Build.0 = Release|Any CPU
+		{797C0403-6DEF-4F78-A975-458FBB3A7EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{797C0403-6DEF-4F78-A975-458FBB3A7EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{797C0403-6DEF-4F78-A975-458FBB3A7EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{797C0403-6DEF-4F78-A975-458FBB3A7EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2BE95D3-9C9D-4542-8C8A-9F41A36724A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2BE95D3-9C9D-4542-8C8A-9F41A36724A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2BE95D3-9C9D-4542-8C8A-9F41A36724A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2BE95D3-9C9D-4542-8C8A-9F41A36724A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A8B9B6B-CFC7-41A8-AB67-A45A00A6A59E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A8B9B6B-CFC7-41A8-AB67-A45A00A6A59E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A8B9B6B-CFC7-41A8-AB67-A45A00A6A59E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A8B9B6B-CFC7-41A8-AB67-A45A00A6A59E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EB5741E-73E0-4490-AC8B-98DAE17F3162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EB5741E-73E0-4490-AC8B-98DAE17F3162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EB5741E-73E0-4490-AC8B-98DAE17F3162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EB5741E-73E0-4490-AC8B-98DAE17F3162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F69BD39-80D0-4D0F-8F5D-20DA05727912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F69BD39-80D0-4D0F-8F5D-20DA05727912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F69BD39-80D0-4D0F-8F5D-20DA05727912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F69BD39-80D0-4D0F-8F5D-20DA05727912}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B95029B-846A-481E-8E4F-A93F49D64531}
+	EndGlobalSection
+EndGlobal

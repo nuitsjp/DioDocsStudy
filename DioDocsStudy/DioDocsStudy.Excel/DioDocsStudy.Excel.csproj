@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GrapeCity.DioDocs.Excel.ja" Version="1.5.0.5" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="if not exist $(ProjectDir)\ExcelActivator.cs copy $(ProjectDir)\..\ExcelActivator.cs $(ProjectDir)\ExcelActivator.cs" />
+  </Target>
+
+</Project>
