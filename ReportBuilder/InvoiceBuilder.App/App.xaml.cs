@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.Data.Common;
 using System.Windows;
+using InvoiceBuilder.ReportBuilder;
 using InvoiceBuilder.Repository;
 using InvoiceBuilder.Repository.Impl;
 using InvoiceBuilder.Transaction;
@@ -37,6 +38,9 @@ namespace InvoiceBuilder.App
                         return connection;
                     }));
             _container.Register<ITransactionContext>(() => transactionContext);
+            _container.Register<IReportBuilder>(
+                () => new ReportBuilder.Impl.ReportBuilder(
+                    InvoiceBuilder.App.Properties.Settings.Default.Endpoint));
             _container.Register<ISalesOrderRepository, SalesOrderRepository>();
             _container.Register<ISalesOrderDetailRepository, SalesOrderDetailRepository>();
             _container.Register<IBuildInvoice, BuildInvoice>();

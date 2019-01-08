@@ -1,7 +1,9 @@
-﻿namespace InvoiceBuilder.ReportBuilder
+﻿using System.Threading.Tasks;
+
+namespace InvoiceBuilder.ReportBuilder
 {
     public interface IReportBuilder
     {
-        byte[] Build(object o);
+        Task<byte[]> Build(object o);
     }
 }

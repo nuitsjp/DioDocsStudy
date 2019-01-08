@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using InvoiceBuilder.ReportBuilder;
 using InvoiceBuilder.Repository;
 using Mapster;
 
@@ -12,10 +13,13 @@ namespace InvoiceBuilder.UseCase.Impl
 
         private readonly ISalesOrderDetailRepository _salesOrderDetailRepository;
 
-        public BuildInvoice(ISalesOrderRepository salesOrderRepository, ISalesOrderDetailRepository salesOrderDetailRepository)
+        private readonly IReportBuilder _reportBuilder;
+
+        public BuildInvoice(ISalesOrderRepository salesOrderRepository, ISalesOrderDetailRepository salesOrderDetailRepository, IReportBuilder reportBuilder)
         {
             _salesOrderRepository = salesOrderRepository;
             _salesOrderDetailRepository = salesOrderDetailRepository;
+            _reportBuilder = reportBuilder;
         }
 
         public IEnumerable<SalesOrder> GetSalesOrders()
@@ -31,6 +35,9 @@ namespace InvoiceBuilder.UseCase.Impl
             {
                 invoice.InvoiceDetails.Add(salesOrderDetail.Adapt<InvoiceDetail>());
             }
+
+            var task = _reportBuilder.Build(invoice);
+            task.Wait();
             return null;
         }
 

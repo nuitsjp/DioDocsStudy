@@ -64,6 +64,9 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="SimpleInjector, Version=4.4.3.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.4.4.3\lib\net45\SimpleInjector.dll</HintPath>
     </Reference>
@@ -255,6 +258,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\InvoiceBuilder.ReportBuilder.Impl\InvoiceBuilder.ReportBuilder.Impl.csproj">
+      <Project>{9a89e917-1bc2-443f-999a-c50841e46473}</Project>
+      <Name>InvoiceBuilder.ReportBuilder.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InvoiceBuilder.ReportBuilder\InvoiceBuilder.ReportBuilder.csproj">
+      <Project>{301330ed-c5f1-402c-ae83-37259ace5141}</Project>
+      <Name>InvoiceBuilder.ReportBuilder</Name>
+    </ProjectReference>
     <ProjectReference Include="..\InvoiceBuilder.Repository.Impl\InvoiceBuilder.Repository.Impl.csproj">
       <Project>{760985ef-97e1-4685-9604-97891ce86f3f}</Project>
       <Name>InvoiceBuilder.Repository.Impl</Name>
