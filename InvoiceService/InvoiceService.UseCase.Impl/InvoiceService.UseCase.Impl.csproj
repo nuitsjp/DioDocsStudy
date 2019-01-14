@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InvoiceService.Repository\InvoiceService.Repository.csproj" />
+    <ProjectReference Include="..\InvoiceService.UseCase\InvoiceService.UseCase.csproj" />
+    <ProjectReference Include="..\ReportService\ReportService.csproj" />
+  </ItemGroup>
+
+</Project>
