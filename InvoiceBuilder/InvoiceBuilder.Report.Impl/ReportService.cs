@@ -10,6 +10,13 @@ namespace InvoiceBuilder.Report.Impl
 {
     public class ReportService : IReportService
     {
+        private readonly ITemplateService _templateService;
+
+        public ReportService(ITemplateService templateService)
+        {
+            _templateService = templateService;
+        }
+
         public byte[] Build(Invoice invoice)
         {
             var reportBuilder = 
@@ -23,7 +30,7 @@ namespace InvoiceBuilder.Report.Impl
                     .AddTableSetter("$ProductName", (range, detail) => range.Value = detail.ProductName)
                     .AddTableSetter("$UnitPrice", (range, detail) => range.Value = detail.UnitPrice)
                     .AddTableSetter("$OrderQuantity", (range, detail) => range.Value = detail.OrderQuantity);
-            using (var stream = new MemoryStream(Properties.Resources.Invoice))
+            using (var stream = new MemoryStream(_templateService.Get()))
             {
                 return reportBuilder.Build(stream, invoice.InvoiceDetails);
             }

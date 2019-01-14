@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using InvoiceBuilder.Report;
 using InvoiceBuilder.Report.Impl;
@@ -18,6 +19,7 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Org.BouncyCastle.Asn1.Cms;
 using SimpleInjector;
 using SimpleInjector.Extras.DynamicProxy;
 using SimpleInjector.Integration.AspNetCore.Mvc;
@@ -25,7 +27,7 @@ using SimpleInjector.Lifestyles;
 
 namespace InvoiceBuilder.App
 {
-    public class Startup : IConnectionFactory
+    public class Startup : IConnectionFactory, ITemplateService
     {
         private readonly Container _container = new Container();
 
@@ -100,8 +102,9 @@ namespace InvoiceBuilder.App
             _container.Register<ISalesOrderRepository, SalesOrderRepository>(Lifestyle.Scoped);
             _container.Register<IInvoiceRepository, InvoiceRepository>(Lifestyle.Scoped);
             _container.Register<IReportService, ReportService>(Lifestyle.Scoped);
-            _container.Register<ITransactionContext, TransactionContext>(Lifestyle.Scoped);
+            _container.Register<ITemplateService>(() => this, Lifestyle.Scoped);
 
+            _container.Register<ITransactionContext, TransactionContext>(Lifestyle.Scoped);
             _container.InterceptWith<TransactionInterceptor>(
                 x => x.Namespace == typeof(ISalesOrderRepository).Namespace);
             _container.Register<IConnectionFactory>(() => this);
@@ -113,6 +116,15 @@ namespace InvoiceBuilder.App
         public IDbConnection Create()
         {
             return new SqlConnection(_connectionString);
+        }
+
+        private readonly HttpClient _httpClient = new HttpClient();
+
+        public byte[] Get()
+        {
+            var task = _httpClient.GetByteArrayAsync(Configuration.GetValue<string>("TemplateUrl"));
+            task.Wait();
+            return task.Result;
         }
     }
 }

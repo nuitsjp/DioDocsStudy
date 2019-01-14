@@ -1,4 +1,5 @@
 ﻿{
+  "TemplateUrl": "YOUR_ADDRESS",
   "ConnectionStrings": {
     "DioDocs": "YOUR_CONNECTION_STRING"
   },
