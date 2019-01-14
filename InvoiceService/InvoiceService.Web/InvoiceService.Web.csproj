@@ -28,7 +28,6 @@
     <ProjectReference Include="..\InvoiceService.Repository.Impl\InvoiceService.Repository.Impl.csproj" />
     <ProjectReference Include="..\InvoiceService.Transaction\InvoiceService.Transaction.csproj" />
     <ProjectReference Include="..\InvoiceService.UseCase.Impl\InvoiceService.UseCase.Impl.csproj" />
-    <ProjectReference Include="..\InvoiceService\InvoiceService.csproj" />
     <ProjectReference Include="..\ReportService.DioDocs\ReportService.DioDocs.csproj" />
     <ProjectReference Include="..\ReportService\ReportService.csproj" />
   </ItemGroup>

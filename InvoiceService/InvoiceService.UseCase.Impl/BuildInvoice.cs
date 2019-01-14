@@ -2,6 +2,7 @@
 using System.Linq;
 using InvoiceService.Repository;
 using ReportService;
+using Mapster;
 
 namespace InvoiceService.UseCase.Impl
 {
@@ -22,7 +23,7 @@ namespace InvoiceService.UseCase.Impl
 
         public IList<SalesOrder> GetSalesOrders()
         {
-            return _salesOrderRepository.Get().ToList();
+            return _salesOrderRepository.Get().Select(x => x.Adapt<SalesOrder>()).ToList();
         }
 
         public byte[] Build(int salesOrderId)

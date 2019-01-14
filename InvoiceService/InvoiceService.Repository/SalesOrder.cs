@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace InvoiceService
+namespace InvoiceService.Repository
 {
     public class SalesOrder
     {

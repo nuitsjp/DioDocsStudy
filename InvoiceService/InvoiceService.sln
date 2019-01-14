@@ -1,25 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceService.Web", "InvoiceService.Web\InvoiceService.Web.csproj", "{646E8011-8A7C-438C-9578-3690F3DB4DD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceService.Web", "InvoiceService.Web\InvoiceService.Web.csproj", "{646E8011-8A7C-438C-9578-3690F3DB4DD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceService", "InvoiceService\InvoiceService.csproj", "{233DDD75-F972-4D60-8737-64E01C846A81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceService.Repository", "InvoiceService.Repository\InvoiceService.Repository.csproj", "{3E61A03C-FE7A-43FA-834C-0618752150AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceService.Repository", "InvoiceService.Repository\InvoiceService.Repository.csproj", "{3E61A03C-FE7A-43FA-834C-0618752150AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceService.Repository.Impl", "InvoiceService.Repository.Impl\InvoiceService.Repository.Impl.csproj", "{20A4449B-9755-44B8-8BF8-BABA959F76FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceService.Repository.Impl", "InvoiceService.Repository.Impl\InvoiceService.Repository.Impl.csproj", "{20A4449B-9755-44B8-8BF8-BABA959F76FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceService.Transaction", "InvoiceService.Transaction\InvoiceService.Transaction.csproj", "{92F067A4-E039-45FB-BF9C-2241D09B678E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceService.Transaction", "InvoiceService.Transaction\InvoiceService.Transaction.csproj", "{92F067A4-E039-45FB-BF9C-2241D09B678E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceService.UseCase", "InvoiceService.UseCase\InvoiceService.UseCase.csproj", "{2412CDAA-78CE-4C69-A220-36A801333754}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceService.UseCase", "InvoiceService.UseCase\InvoiceService.UseCase.csproj", "{2412CDAA-78CE-4C69-A220-36A801333754}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceService.UseCase.Impl", "InvoiceService.UseCase.Impl\InvoiceService.UseCase.Impl.csproj", "{5161AB40-AFC2-4856-BC3E-75DCC864DAAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceService.UseCase.Impl", "InvoiceService.UseCase.Impl\InvoiceService.UseCase.Impl.csproj", "{5161AB40-AFC2-4856-BC3E-75DCC864DAAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportService", "ReportService\ReportService.csproj", "{7D343D2B-29CB-41DD-A086-CD56B4D9A779}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportService", "ReportService\ReportService.csproj", "{7D343D2B-29CB-41DD-A086-CD56B4D9A779}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportService.DioDocs", "ReportService.DioDocs\ReportService.DioDocs.csproj", "{052BB238-E6E9-4123-A62B-411DCFC85460}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportService.DioDocs", "ReportService.DioDocs\ReportService.DioDocs.csproj", "{052BB238-E6E9-4123-A62B-411DCFC85460}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		{646E8011-8A7C-438C-9578-3690F3DB4DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{646E8011-8A7C-438C-9578-3690F3DB4DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{646E8011-8A7C-438C-9578-3690F3DB4DD2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{233DDD75-F972-4D60-8737-64E01C846A81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{233DDD75-F972-4D60-8737-64E01C846A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{233DDD75-F972-4D60-8737-64E01C846A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{233DDD75-F972-4D60-8737-64E01C846A81}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3E61A03C-FE7A-43FA-834C-0618752150AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3E61A03C-FE7A-43FA-834C-0618752150AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E61A03C-FE7A-43FA-834C-0618752150AC}.Release|Any CPU.ActiveCfg = Release|Any CPU

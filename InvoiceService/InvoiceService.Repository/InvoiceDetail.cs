@@ -1,4 +1,4 @@
-﻿namespace InvoiceService
+﻿namespace InvoiceService.Repository
 {
     public class InvoiceDetail
     {

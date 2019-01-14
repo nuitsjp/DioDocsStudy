@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace InvoiceService
+namespace InvoiceService.Repository
 {
     public class Invoice
     {
