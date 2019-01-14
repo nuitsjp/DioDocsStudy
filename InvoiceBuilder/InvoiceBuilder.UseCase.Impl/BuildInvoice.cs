@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using InvoiceBuilder.Report;
 using InvoiceBuilder.Repository;
-using Mapster;
 
 namespace InvoiceBuilder.UseCase.Impl
 {
@@ -24,7 +23,7 @@ namespace InvoiceBuilder.UseCase.Impl
 
         public IList<SalesOrder> GetSalesOrders()
         {
-            return _salesOrderRepository.Get().Select(x => x.Adapt<SalesOrder>()).ToList();
+            return _salesOrderRepository.Get().ToList();
         }
 
         public byte[] Build(int salesOrderId)
