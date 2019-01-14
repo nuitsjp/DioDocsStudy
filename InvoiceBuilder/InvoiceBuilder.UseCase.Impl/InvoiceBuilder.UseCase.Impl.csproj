@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mapster" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InvoiceBuilder.Report\InvoiceBuilder.Report.csproj" />
+    <ProjectReference Include="..\InvoiceBuilder.Repository\InvoiceBuilder.Repository.csproj" />
+    <ProjectReference Include="..\InvoiceBuilder.UseCase\InvoiceBuilder.UseCase.csproj" />
+  </ItemGroup>
+
+</Project>

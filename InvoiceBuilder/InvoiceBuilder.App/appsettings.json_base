@@ -1,0 +1,18 @@
+﻿{
+  "ConnectionStrings": {
+    "DioDocs": "YOUR_CONNECTION_STRING"
+  },
+  "Logging": {
+    "IncludeScopes": false,
+    "Debug": {
+      "LogLevel": {
+        "Default": "Warning"
+      }
+    },
+    "Console": {
+      "LogLevel": {
+        "Default": "Warning"
+      }
+    }
+  }
+}

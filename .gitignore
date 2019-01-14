@@ -12,6 +12,8 @@
 *.pvk
 *.cer
 
+appsettings.json
+
 
 # User-specific files
 *.suo
