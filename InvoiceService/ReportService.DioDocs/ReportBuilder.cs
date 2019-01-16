@@ -5,12 +5,12 @@ using GrapeCity.Documents.Excel;
 
 namespace ReportService.DioDocs
 {
-    public class ReportBuilder<TReportRow> : IReportBuilder<TReportRow>, IDisposable
+    public class ReportBuilder<TReportRow> : IReportBuilder<TReportRow>
     {
         /// <summary>
         /// テンプレートとなるExcelファイル
         /// </summary>
-        private Stream _excel;
+        private readonly Workbook _workbook;
         /// <summary>
         /// 明細行を表示するExcelテーブルの名称
         /// </summary>
@@ -19,19 +19,18 @@ namespace ReportService.DioDocs
         /// <summary>
         /// 単項目を設定するためのSetter
         /// </summary>
-        private readonly Dictionary<object, Action<IRange>> _setters = new Dictionary<object, Action<IRange>>();
+        private readonly Dictionary<object, Action<IRange>> _setters = 
+            new Dictionary<object, Action<IRange>>();
         /// <summary>
         /// テーブルの列項目を設定するためのSetter
         /// </summary>
-        private readonly Dictionary<object, Action<IRange, TReportRow>> _tableSetters = new Dictionary<object, Action<IRange, TReportRow>>();
+        private readonly Dictionary<object, Action<IRange, TReportRow>> _tableSetters = 
+            new Dictionary<object, Action<IRange, TReportRow>>();
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="excel"></param>
         public ReportBuilder(Stream excel)
         {
-            _excel = excel;
+            _workbook = new Workbook();
+            _workbook.Open(excel);
             _tableName = typeof(TReportRow).Name;
         }
 
@@ -49,10 +48,7 @@ namespace ReportService.DioDocs
 
         public byte[] Build(IList<TReportRow> rows)
         {
-            var workbook = new Workbook();
-            workbook.Open(_excel);
-
-            var worksheet = workbook.Worksheets[0];
+            var worksheet = _workbook.Worksheets[0];
 
             // コールバックに渡すためのIRangeオブジェクト
             // 都度生成すると、大きな帳票ではインスタンス生成コストが無視できない
@@ -110,17 +106,8 @@ namespace ReportService.DioDocs
 
             using (var outputStream = new MemoryStream())
             {
-                workbook.Save(outputStream, SaveFileFormat.Pdf);
+                _workbook.Save(outputStream, SaveFileFormat.Pdf);
                 return outputStream.ToArray();
-            }
-        }
-
-        public void Dispose()
-        {
-            if (_excel != null)
-            {
-                _excel.Dispose();
-                _excel = null;
             }
         }
     }
