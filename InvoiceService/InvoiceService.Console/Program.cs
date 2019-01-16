@@ -50,8 +50,8 @@ namespace InvoiceService.Console
                             .AddTableSetter("$ProductName", (cell, detail) => cell.Value = detail.ProductName)
                             .AddTableSetter("$UnitPrice", (cell, detail) => cell.Value = detail.UnitPrice)
                             .AddTableSetter("$OrderQuantity", (cell, detail) => cell.Value = detail.OrderQuantity);
-                    var report = reportBuilder.Build(invoice.InvoiceDetails);
 
+                    var report = reportBuilder.Build(invoice.InvoiceDetails);
                     File.WriteAllBytes("result.pdf", report);
                 }
 

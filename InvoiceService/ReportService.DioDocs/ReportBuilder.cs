@@ -5,22 +5,30 @@ using GrapeCity.Documents.Excel;
 
 namespace ReportService.DioDocs
 {
-    public class ReportBuilder<TReportRow> : IReportBuilder<TReportRow>, IRange, IDisposable
+    public class ReportBuilder<TReportRow> : IReportBuilder<TReportRow>, IDisposable
     {
+        /// <summary>
+        /// テンプレートとなるExcelファイル
+        /// </summary>
         private Stream _excel;
+        /// <summary>
+        /// 明細行を表示するExcelテーブルの名称
+        /// </summary>
         private readonly string _tableName;
 
+        /// <summary>
+        /// 単項目を設定するためのSetter
+        /// </summary>
         private readonly Dictionary<object, Action<IRange>> _setters = new Dictionary<object, Action<IRange>>();
-
+        /// <summary>
+        /// テーブルの列項目を設定するためのSetter
+        /// </summary>
         private readonly Dictionary<object, Action<IRange, TReportRow>> _tableSetters = new Dictionary<object, Action<IRange, TReportRow>>();
 
-        private GrapeCity.Documents.Excel.IRange _currentRange;
-
-        public object Value
-        {
-            set => _currentRange.Value = value;
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="excel"></param>
         public ReportBuilder(Stream excel)
         {
             _excel = excel;
@@ -46,6 +54,10 @@ namespace ReportService.DioDocs
 
             var worksheet = workbook.Worksheets[0];
 
+            // コールバックに渡すためのIRangeオブジェクト
+            // 都度生成すると、大きな帳票ではインスタンス生成コストが無視できない
+            // 可能性があるため、インスタンスを使いまわす
+            var range = new Range();
             // 利用している領域を走査して、単一項目を設定する
             var usedRange = worksheet.UsedRange;
             for (var i = 0; i < usedRange.Rows.Count; i++)
@@ -55,8 +67,8 @@ namespace ReportService.DioDocs
                     var cell = usedRange[i, j];
                     if (cell.Value != null && _setters.ContainsKey(cell.Value))
                     {
-                        _currentRange = cell;
-                        _setters[cell.Value](this);
+                        range.DioDocsRange = cell;
+                        _setters[cell.Value](range);
                     }
                 }
             }
@@ -86,13 +98,13 @@ namespace ReportService.DioDocs
             }
 
             // テーブルに値を設定する
-            for (var i = 0; i < templateTable.Rows.Count; i++)
+            for (var i = 0; i < rows.Count; i++)
             {
                 var row = templateTable.Rows[i];
                 foreach (var rowSetter in rowSetters)
                 {
-                    _currentRange = row.Range[rowSetter.index];
-                    rowSetter.setter(this, rows[i]);
+                    range.DioDocsRange = row.Range[rowSetter.index];
+                    rowSetter.setter(range, rows[i]);
                 }
             }
 
