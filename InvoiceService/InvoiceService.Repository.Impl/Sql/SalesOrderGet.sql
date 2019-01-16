@@ -2,8 +2,7 @@
 	SalesOrderId,
 	OrderDate,
 	CompanyName,
-	FirstName,
-	LastName,
+	Name,
 	DetailCount,
 	TotalPrice
 from

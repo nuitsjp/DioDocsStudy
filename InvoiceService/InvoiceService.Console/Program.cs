@@ -43,8 +43,8 @@ namespace InvoiceService.Console
                             .AddSetter("$SalesOrderId", cell => cell.Value = invoice.SalesOrderId)
                             .AddSetter("$OrderDate", cell => cell.Value = invoice.OrderDate)
                             .AddSetter("$CompanyName", cell => cell.Value = invoice.CompanyName)
-                            .AddSetter("$Name", cell => cell.Value = invoice.FirstName + " " + invoice.LastName)
-                            .AddSetter("$Address", cell => cell.Value = invoice.AddressLine1 + " " + invoice.AddressLine2 + " " + invoice.City + " " + invoice.State)
+                            .AddSetter("$Name", cell => cell.Value = invoice.Name)
+                            .AddSetter("$Address", cell => cell.Value = invoice.Address)
                             .AddSetter("$PostalCode", cell => cell.Value = invoice.PostalCode)
                             // テーブルのセルに対するSetterを設定
                             .AddTableSetter("$ProductName", (range, detail) => range.Value = detail.ProductName)
@@ -64,12 +64,8 @@ namespace InvoiceService.Console
         public int SalesOrderId { get; set; }
         public DateTime OrderDate { get; set; }
         public string CompanyName { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string AddressLine1 { get; set; }
-        public string AddressLine2 { get; set; }
-        public string City { get; set; }
-        public string State { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
         public string PostalCode { get; set; }
         public List<InvoiceDetail> InvoiceDetails { get; } = new List<InvoiceDetail>();
     }

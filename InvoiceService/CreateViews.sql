@@ -27,8 +27,7 @@ SELECT
 	SalesOrderHeader.SalesOrderID AS SalesOrderId,
 	SalesOrderHeader.OrderDate,
 	Customer.CompanyName,
-	Customer.FirstName,
-	Customer.LastName,
+	Customer.FirstName + ' ' + Customer.LastName AS Name,
 	DetailCount,
 	TotalPrice
 FROM
@@ -47,12 +46,8 @@ SELECT
 	SalesOrderHeader.SalesOrderID AS SalesOrderId,
 	SalesOrderHeader.OrderDate,
 	Customer.CompanyName,
-	Customer.FirstName,
-	Customer.LastName,
-	AddressLine1,
-	AddressLine2,
-	City,
-	StateProvince AS State,
+	Customer.FirstName + ' ' + Customer.LastName,
+	AddressLine1 + ' ' + AddressLine2 + ' ' + City + ' ' + StateProvince AS Address,
 	PostalCode
 FROM
 	SalesLT.SalesOrderHeader
