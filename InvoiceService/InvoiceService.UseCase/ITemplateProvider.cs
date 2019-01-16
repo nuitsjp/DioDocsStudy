@@ -2,6 +2,6 @@
 {
     public interface ITemplateProvider
     {
-        byte[] Get<TReport>();
+        byte[] Get();
     }
 }

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+      <section name="InvoiceService.Console.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <connectionStrings>
+    <add name="DioDocs"
+         connectionString="Data Source=(サーバー名/IPアドレス);Persist Security Info=True;User ID=(ユーザー名);Password=(パスワード)"
+         providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+  <applicationSettings>
+    <InvoiceService.Console.Properties.Settings>
+      <setting name="DioDocsForExcelKey" serializeAs="String">
+        <value>YOUR_KEY</value>
+      </setting>
+    </InvoiceService.Console.Properties.Settings>
+  </applicationSettings>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+  </startup>
+</configuration>

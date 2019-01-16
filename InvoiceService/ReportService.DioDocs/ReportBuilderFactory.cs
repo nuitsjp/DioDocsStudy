@@ -1,17 +1,12 @@
-﻿namespace ReportService.DioDocs
+﻿using System.IO;
+
+namespace ReportService.DioDocs
 {
     public class ReportBuilderFactory : IReportBuilderFactory
     {
-        private readonly ITemplateProvider _templateProvider;
-
-        public ReportBuilderFactory(ITemplateProvider templateProvider)
+        public IReportBuilder<TReportRow> Create<TReportRow>(Stream excel)
         {
-            _templateProvider = templateProvider;
-        }
-
-        public IReportBuilder<TReport, TReportRow> Create<TReport, TReportRow>(string tableName)
-        {
-            return new ReportBuilder<TReport, TReportRow>(tableName, _templateProvider);
+            return new ReportBuilder<TReportRow>(excel);
         }
     }
 }

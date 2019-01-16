@@ -8,6 +8,7 @@
 */DioDocsStudy.Excel/ExcelActivator.cs
 */DioDocsStudy.Pdf/PdfActivator.cs
 */ManageTableSample/ExcelActivator.cs
+*/InvoiceService.Console/App.config
 *.pfx
 *.pvk
 *.cer

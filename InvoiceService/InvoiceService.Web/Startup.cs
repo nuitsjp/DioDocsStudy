@@ -1,6 +1,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Net.Http;
+using GrapeCity.Documents.Excel;
 using InvoiceService.Repository;
 using InvoiceService.Repository.Impl;
 using InvoiceService.Transaction;
@@ -32,7 +33,9 @@ namespace InvoiceService.Web
         {
             Configuration = configuration;
             _connectionString = Configuration.GetConnectionString("DioDocs");
-            C1.Web.Mvc.LicenseManager.Key = "c1v01w5vFscO9xIvCrsWrwq/EsMO6xJnEp8Kxw5bCuMK+W8OuxY1qwrXDncKIw7fCjsSIVcO6R8Sew43CjMKKxKnFrMSpw5DEhcKJxLfEhcSqxJvCgMWFSsOWw6XFiMOyecS5wqTCjsOAwqlCccOBxJ/DgsSUw7/Eo8SiwrTEj3zEjcOVeX54woXFlMSsxITDhWPEn33CvH3DpUPCo8KlwqTEkcWFw55Ef8SdwrrErsSexLjDpsSaXsKZxIjEkXhWw4lpxZfCrsKHwqvEp8KWxJl3xJ/FkXzFhMWQxJXDrcKmw6M=";//これはトライアル版のライセンスです。
+
+            Workbook.SetLicenseKey(Configuration.GetValue<string>("DioDocsForExcelKey"));
+            C1.Web.Mvc.LicenseManager.Key = Configuration.GetValue<string>("C1Key");
         }
 
         public IConfiguration Configuration { get; }
@@ -115,7 +118,7 @@ namespace InvoiceService.Web
 
         private readonly HttpClient _httpClient = new HttpClient();
 
-        public byte[] Get<TReport>()
+        public byte[] Get()
         {
             var task = _httpClient.GetByteArrayAsync(Configuration.GetValue<string>("TemplateUrl"));
             task.Wait();
