@@ -46,9 +46,9 @@ namespace InvoiceService.UseCase.Impl
                         .AddSetter("$Address", cell => cell.Value = invoice.Address)
                         .AddSetter("$PostalCode", cell => cell.Value = invoice.PostalCode)
                         // テーブルのセルに対するSetterを設定
-                        .AddTableSetter("$ProductName", (range, detail) => range.Value = detail.ProductName)
-                        .AddTableSetter("$UnitPrice", (range, detail) => range.Value = detail.UnitPrice)
-                        .AddTableSetter("$OrderQuantity", (range, detail) => range.Value = detail.OrderQuantity);
+                        .AddTableSetter("$ProductName", (cell, detail) => cell.Value = detail.ProductName)
+                        .AddTableSetter("$UnitPrice", (cell, detail) => cell.Value = detail.UnitPrice)
+                        .AddTableSetter("$OrderQuantity", (cell, detail) => cell.Value = detail.OrderQuantity);
                 return reportBuilder.Build(invoice.InvoiceDetails);
             }
         }

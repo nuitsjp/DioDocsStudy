@@ -5,16 +5,16 @@ using GrapeCity.Documents.Excel;
 
 namespace ReportService.DioDocs
 {
-    public class ReportBuilder<TReportRow> : IReportBuilder<TReportRow>, IField, IDisposable
+    public class ReportBuilder<TReportRow> : IReportBuilder<TReportRow>, IRange, IDisposable
     {
         private Stream _excel;
         private readonly string _tableName;
 
-        private readonly Dictionary<object, Action<IField>> _setters = new Dictionary<object, Action<IField>>();
+        private readonly Dictionary<object, Action<IRange>> _setters = new Dictionary<object, Action<IRange>>();
 
-        private readonly Dictionary<object, Action<IField, TReportRow>> _tableSetters = new Dictionary<object, Action<IField, TReportRow>>();
+        private readonly Dictionary<object, Action<IRange, TReportRow>> _tableSetters = new Dictionary<object, Action<IRange, TReportRow>>();
 
-        private IRange _currentRange;
+        private GrapeCity.Documents.Excel.IRange _currentRange;
 
         public object Value
         {
@@ -27,13 +27,13 @@ namespace ReportService.DioDocs
             _tableName = typeof(TReportRow).Name;
         }
 
-        public IReportBuilder<TReportRow> AddSetter(object key, Action<IField> setter)
+        public IReportBuilder<TReportRow> AddSetter(object key, Action<IRange> setter)
         {
             _setters[key] = setter;
             return this;
         }
 
-        public IReportBuilder<TReportRow> AddTableSetter(string key, Action<IField, TReportRow> setter)
+        public IReportBuilder<TReportRow> AddTableSetter(string key, Action<IRange, TReportRow> setter)
         {
             _tableSetters[key] = setter;
             return this;
@@ -74,7 +74,7 @@ namespace ReportService.DioDocs
             }
 
             // テーブルの1行目から項目の列番号を探索する
-            var rowSetters = new List<(int index, Action<IField, TReportRow> setter)>();
+            var rowSetters = new List<(int index, Action<IRange, TReportRow> setter)>();
             var firstRow = templateTable.Rows[0];
             for (var i = 0; i < firstRow.Range.Columns.Count; i++)
             {

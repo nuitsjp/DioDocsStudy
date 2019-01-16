@@ -1,6 +1,6 @@
 ﻿namespace ReportService
 {
-    public interface IField
+    public interface IRange
     {
         object Value { set; }
     }
