@@ -4,6 +4,9 @@ using System.Configuration;
 using System.Data.Common;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Xml;
+using System.Xml.Serialization;
 using Dapper;
 using GrapeCity.Documents.Excel;
 using ReportService.DioDocs;
@@ -14,26 +17,12 @@ namespace InvoiceService.Console
     {
         static void Main(string[] args)
         {
-            Workbook.SetLicenseKey(Properties.Settings.Default.DioDocsForExcelKey);
+            //Workbook.SetLicenseKey(Properties.Settings.Default.DioDocsForExcelKey);
 
-            var settings = ConfigurationManager.ConnectionStrings["DioDocs"];
-            var factory = DbProviderFactories.GetFactory(settings.ProviderName);
-            using (var connection = factory.CreateConnection())
+            using (var fileStream = new MemoryStream(Encoding.UTF8.GetBytes(Properties.Resources.InvoiceXml)))
             {
-                connection.ConnectionString = settings.ConnectionString;
-                connection.Open();
-
-                const int salesOrderId = 71936;
-                var invoice = connection
-                    .Query<Invoice>(
-                        Properties.Resources.SelectInvoice,
-                        new { SalesOrderId = salesOrderId })
-                    .Single();
-                invoice.InvoiceDetails.AddRange(
-                    connection
-                        .Query<InvoiceDetail>(
-                            Properties.Resources.SelectInvoiceDetail,
-                            new { SalesOrderId = salesOrderId }));
+                var serializer = new XmlSerializer(typeof(Invoice));
+                var invoice = (Invoice)serializer.Deserialize(fileStream);
 
                 using (var stream = new MemoryStream(Properties.Resources.Invoice))
                 {
@@ -54,7 +43,6 @@ namespace InvoiceService.Console
                     var report = reportBuilder.Build(invoice.InvoiceDetails);
                     File.WriteAllBytes("result.pdf", report);
                 }
-
             }
         }
     }

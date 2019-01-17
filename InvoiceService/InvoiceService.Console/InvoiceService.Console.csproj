@@ -112,6 +112,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="invoice.xml" />
     <Content Include="Sql\SelectInvoiceDetail.sql" />
   </ItemGroup>
   <ItemGroup>

@@ -19,7 +19,7 @@ namespace InvoiceService.Console.Properties {
     // または Visual Studio のようなツールを使用して自動生成されました。
     // メンバーを追加または削除するには、.ResX ファイルを編集して、/str オプションと共に
     // ResGen を実行し直すか、または VS プロジェクトをビルドし直します。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -71,16 +71,33 @@ namespace InvoiceService.Console.Properties {
         }
         
         /// <summary>
+        ///   &lt;?xml version=&quot;1.0&quot;?&gt;
+        ///&lt;Invoice xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+        ///  &lt;SalesOrderId&gt;71936&lt;/SalesOrderId&gt;
+        ///  &lt;OrderDate&gt;2008-06-01T00:00:00&lt;/OrderDate&gt;
+        ///  &lt;CompanyName&gt;Metropolitan Bicycle Supply&lt;/CompanyName&gt;
+        ///  &lt;Name&gt;Krishna Sunkammurali&lt;/Name&gt;
+        ///  &lt;PostalCode&gt;W1N 9FA&lt;/PostalCode&gt;
+        ///  &lt;InvoiceDetails&gt;
+        ///    &lt;InvoiceDetail&gt;
+        ///      &lt;OrderQuantity&gt;3&lt;/OrderQuantity&gt;
+        ///      &lt;UnitPrice&gt;12&lt;/UnitPrice&gt;
+        ///      &lt;ProductName&gt;Chain&lt;/ProductName&gt;
+        ///    &lt;/Invo [残りの文字列は切り詰められました]&quot;; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string InvoiceXml {
+            get {
+                return ResourceManager.GetString("InvoiceXml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   SELECT
         ///	SalesOrderId,
         ///	OrderDate,
         ///	CompanyName,
-        ///	FirstName,
-        ///	LastName,
-        ///	AddressLine1,
-        ///	AddressLine2,
-        ///	City,
-        ///	State,
+        ///	Name,
+        ///	Address,
         ///	PostalCode
         ///FROM
         ///	Invoice.Invoice
