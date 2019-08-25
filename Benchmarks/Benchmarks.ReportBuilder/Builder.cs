@@ -10,14 +10,13 @@ namespace Benchmarks.ReportBuilder
         {
             Workbook.SetLicenseKey(Secrets.DioDocsKey);
         }
-        public static void Build()
+
+        public static void Build(Stream input)
         {
-            using (var input = new MemoryStream(Properties.Resources.Report))
-            {
-                var workbook = new Workbook();
-                workbook.Open(input);
-                workbook.Save(Stream.Null, SaveFileFormat.Pdf);
-            }
+            var workbook = new Workbook();
+            workbook.Open(input);
+            workbook.Save(Stream.Null, SaveFileFormat.Pdf);
         }
+
     }
 }

@@ -16,13 +16,14 @@ namespace Benchmarks.Functions
         [FunctionName("CreatePdf")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
+            [Blob("templates/Report.xlsx", FileAccess.Read)]Stream input,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
+            log.LogInformation($"C# HTTP trigger function processed a request. input:{input}");
 
             var stopwatch = new Stopwatch();
             stopwatch.Start();
-            ReportBuilder.Builder.Build();
+            ReportBuilder.Builder.Build(input);
             stopwatch.Stop();
             return new OkObjectResult(stopwatch.Elapsed);
         }

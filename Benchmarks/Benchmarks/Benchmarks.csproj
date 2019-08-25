@@ -14,4 +14,10 @@
     <ProjectReference Include="..\Benchmarks.ReportBuilder\Benchmarks.ReportBuilder.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Report.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
