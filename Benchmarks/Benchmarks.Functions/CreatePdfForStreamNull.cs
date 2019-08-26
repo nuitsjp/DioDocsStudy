@@ -14,26 +14,19 @@ using System.Text;
 
 namespace Benchmarks.Functions
 {
-    public static class CreatePdf
+    public static class CreatePdfForStreamNull
     {
-        [FunctionName("CreatePdf")]
+        [FunctionName("CreatePdfForStreamNull")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             [Blob("templates/Report.xlsx", FileAccess.Read)]Stream input,
-            [Blob("output", FileAccess.Write)] CloudBlobContainer outputContainer,
             ILogger log)
         {
             log.LogInformation($"C# HTTP trigger function processed a request. input:{input}");
 
-            await outputContainer.CreateIfNotExistsAsync();
-            var cloudBlockBlob = outputContainer.GetBlockBlobReference("result.pdf");
-
             var stopwatch = new Stopwatch();
             stopwatch.Start();
-            using(var output = await cloudBlockBlob.OpenWriteAsync())
-            {
-                ReportBuilder.Builder.Build(input, output);
-            }
+            ReportBuilder.Builder.Build(input, Stream.Null);
             stopwatch.Stop();
             return new OkObjectResult(stopwatch.Elapsed);
         }

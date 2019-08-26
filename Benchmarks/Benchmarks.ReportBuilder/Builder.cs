@@ -11,11 +11,11 @@ namespace Benchmarks.ReportBuilder
             Workbook.SetLicenseKey(Secrets.DioDocsKey);
         }
 
-        public static void Build(Stream input)
+        public static void Build(Stream input, Stream output)
         {
             var workbook = new Workbook();
             workbook.Open(input);
-            workbook.Save(Stream.Null, SaveFileFormat.Pdf);
+            workbook.Save(output, SaveFileFormat.Pdf);
         }
 
     }
