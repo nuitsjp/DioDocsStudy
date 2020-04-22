@@ -4,6 +4,7 @@ using System.Data;
 using System.IO;
 using GrapeCity.Documents.Excel;
 using Microsoft.Data.SqlClient;
+using TemplateStudy;
 
 namespace TemplateStudyFromDatabase
 {
@@ -11,7 +12,7 @@ namespace TemplateStudyFromDatabase
     {
         static void Main(string[] args)
         {
-            var workbook = new Workbook();
+            var workbook = new Workbook(Secrets.Key);
             workbook.Open("Invoice.xlsx");
 
 
@@ -25,27 +26,22 @@ namespace TemplateStudyFromDatabase
             using var connection = new SqlConnection(connectionStringBuilder.ToString());
             connection.Open();
 
-            using var dataSet = new DataSet();
+            ProcessTemplate(connection, workbook);
+        }
 
-            using var headerDataTable = dataSet.Tables.Add("InvoiceHeader");
-            using var headerCommand = 
-                new SqlCommand(
-                    File.ReadAllText("SelectInvoiceHeader.sql"),
-                    connection);
-            headerDataTable.Load(headerCommand.ExecuteReader());
-
-            using var dataTable = dataSet.Tables.Add("InvoiceDetails");
+        private static void ProcessTemplate(SqlConnection connection, Workbook workbook)
+        {
             using var command =
                 new SqlCommand(
-                    File.ReadAllText("SelectInvoiceDetails.sql"),
+                    File.ReadAllText("SelectInvoices.sql"),
                     connection);
+            using var dataTable = new DataTable();
             dataTable.Load(command.ExecuteReader());
 
-
-            workbook.AddDataSource("Invoice", dataSet);
+            workbook.AddDataSource("Invoice", dataTable);
             workbook.ProcessTemplate();
 
-            workbook.Save("AppliedTemplate.xlsx");
+            workbook.Save("AppliedTemplate.pdf", SaveFileFormat.Pdf);
         }
     }
 

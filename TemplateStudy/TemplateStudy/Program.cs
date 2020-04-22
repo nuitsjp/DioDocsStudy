@@ -11,7 +11,7 @@ namespace TemplateStudy
     {
         static void Main(string[] args)
         {
-            var workbook = new Workbook();
+            var workbook = new Workbook(Secrets.Key);
             workbook.Open("Invoice.xlsx");
 
             using var invoiceStream = File.OpenRead("invoice.xml");

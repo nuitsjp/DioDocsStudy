@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+    <PackageReference Include="Dapper" Version="2.0.35" />
     <PackageReference Include="GrapeCity.Documents.Excel" Version="3.1.1" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.2" />
   </ItemGroup>
@@ -14,7 +16,7 @@
     <None Update="Invoice.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="SelectInvoices.sql">
+    <None Update="invoice.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="SelectInvoiceDetails.sql">
